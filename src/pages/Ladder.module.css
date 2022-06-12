@@ -1,0 +1,18 @@
+.ladderbuttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ladderbuttons > * {
+    color: white;
+    font-size: 0.95em;
+    border: 1px solid hsla(0, 0%, 100%, 0.226);
+    flex-grow: 1;
+    margin-bottom: 10px;
+    background-color: hsla(100, 14%, 4%, 0.781);
+}
+
+.active {
+    background-color: hsla(101, 20%, 19%, 0.781);
+}

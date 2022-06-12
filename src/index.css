@@ -1,13 +1,52 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
+  height: 100vh;
+  background-image: url(./components/images/tbc\ portal.png);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+._0 {
+  color: grey;
+}
+._1 {
+  color: pink;
+}
+._2 {
+  color: rgb(128, 113, 96);
+}
+._3 {
+  color: rgb(169, 209, 114);
+}
+._4 {
+  color: rgb(219, 216, 4);
+}
+._5 {
+  color: white;
+}
+._7 {
+  color: rgb(0, 112, 222);
+}
+._8 {
+  color: rgb(95, 183, 215);
+}
+._9 {
+  color: rgb(134, 117, 181);
+}
+._11 {
+  color: rgb(240, 146, 24);
+}
+

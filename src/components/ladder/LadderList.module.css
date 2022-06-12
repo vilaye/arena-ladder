@@ -1,0 +1,33 @@
+.laddertable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    min-width: 1750px;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: white;
+}
+
+.laddertable thead tr {
+    background-color: hsla(100, 14%, 4%, 0.781);
+    color: white;
+    font-weight: bold;
+}
+
+.laddertable th,
+.laddertable td {
+    padding: 12px 15px;
+}
+
+.laddertable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.laddertable tbody tr:nth-of-type(even) {
+    background-color: hsla(100, 14%, 4%, 0.781);
+}
+
+.laddertable tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+

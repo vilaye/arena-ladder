@@ -1,0 +1,28 @@
+.ladderentry {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.red {
+    color: rgba(255, 0, 0, 0.781);
+    text-decoration: none;
+}
+
+.blue {
+    color: rgb(0, 110, 255);
+    text-decoration: none;
+}
+
+img {
+    width: 1.5rem;
+    padding: 0 5px 0 0;
+}
+
+.members {
+    max-width: 500px;
+    text-align: left;
+}
+
+.team {
+    text-align: left;
+}

@@ -1,0 +1,20 @@
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons button {
+  color: white;
+  background-color: hsla(100, 14%, 4%, 0.781);
+  border: 0px;
+  height: 30px;
+  width: 30px;
+}  
+
+.buttons .activeButton {
+   color: rgb(128, 214, 29);
+}
+
+.buttons .inactiveButton {
+  display: none;
+}

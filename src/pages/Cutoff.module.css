@@ -1,0 +1,16 @@
+.cutoffs {
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    border: 10px solid firebrick;
+}
+
+@media (min-width: 800px) {
+    .cutoffs {
+        flex-direction: row;
+    }
+}
+
+.cutoffs > * {
+    flex-basis: 100%;
+}

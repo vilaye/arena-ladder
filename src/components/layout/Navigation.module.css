@@ -1,0 +1,31 @@
+ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: hsla(113, 20%, 9%, 0.75);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: hsla(101, 20%, 19%, 0.781);
+}
+
+.highlight {
+  background-color: #111;
+}
+
