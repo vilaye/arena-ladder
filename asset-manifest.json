@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/arena-ladder/static/css/main.999e827a.css",
-    "main.js": "/arena-ladder/static/js/main.15b3e7ae.js",
+    "main.js": "/arena-ladder/static/js/main.6785508f.js",
     "static/media/tbc portal.png": "/arena-ladder/static/media/tbc portal.9487b8cf852d3413b2b8.png",
     "index.html": "/arena-ladder/index.html",
     "main.999e827a.css.map": "/arena-ladder/static/css/main.999e827a.css.map",
-    "main.15b3e7ae.js.map": "/arena-ladder/static/js/main.15b3e7ae.js.map"
+    "main.6785508f.js.map": "/arena-ladder/static/js/main.6785508f.js.map"
   },
   "entrypoints": [
     "static/css/main.999e827a.css",
-    "static/js/main.15b3e7ae.js"
+    "static/js/main.6785508f.js"
   ]
 }
