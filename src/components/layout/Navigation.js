@@ -19,9 +19,6 @@ function Navigation() {
           <li>
             <Link to="/arena-point-calculator">Arena Points Calculator</Link>
           </li>
-          <li>
-            <Link to="/gear">PVP Gear</Link>
-          </li>
         </ul>
       </nav>
     </header>

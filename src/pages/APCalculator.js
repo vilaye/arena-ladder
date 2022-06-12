@@ -13,7 +13,7 @@ function APCalculatorPage () {
             return 0
         }
         var exponent = Math.pow(2.71828, -0.00412 * rating);
-        result = 356 + (1157 / (1 + (1675 * exponent)));
+        result = 580 + (1022 / (1 + (123 * exponent)));
 
         if (bracket === '2v2') {
             result = result * 0.76
@@ -42,12 +42,12 @@ function APCalculatorPage () {
                         <td>{calculatePoints('2v2', twos)}</td>
                     </tr>
                     <tr>
-                        <td>2v2</td>
+                        <td>3v3</td>
                         <td><input type="number" onChange={e => setThrees(e.target.value)}/></td>
                         <td>{calculatePoints('3v3', threes)}</td>
                     </tr>
                     <tr>
-                        <td>2v2</td>
+                        <td>5v5</td>
                         <td><input type="number" onChange={e => setFives(e.target.value)}/></td>
                         <td>{calculatePoints('5v5', fives)}</td>
                     </tr>
