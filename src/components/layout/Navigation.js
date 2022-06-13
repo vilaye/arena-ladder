@@ -8,9 +8,6 @@ function Navigation() {
       <nav>
         <ul className={style.navlist}>
           <li>
-            <Link to="/">ARENAJUNKIES</Link>
-          </li>
-          <li>
             <Link to="/ladder">Ladder</Link>
           </li>
           <li>
