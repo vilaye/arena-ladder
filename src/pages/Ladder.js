@@ -158,7 +158,6 @@ function LadderPage() {
     return (
       <div>
         <p>Loading ...</p>
-
       </div>
     );
   }
