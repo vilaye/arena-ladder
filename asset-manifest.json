@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.be5514ce.css",
-    "main.js": "/static/js/main.d0c15d21.js",
-    "static/media/tbc portal.png": "/static/media/tbc portal.9487b8cf852d3413b2b8.png",
-    "index.html": "/index.html",
-    "main.be5514ce.css.map": "/static/css/main.be5514ce.css.map",
-    "main.d0c15d21.js.map": "/static/js/main.d0c15d21.js.map"
+    "main.css": "/arena-ladder/static/css/main.999e827a.css",
+    "main.js": "/arena-ladder/static/js/main.d0c15d21.js",
+    "static/media/tbc portal.png": "/arena-ladder/static/media/tbc portal.9487b8cf852d3413b2b8.png",
+    "index.html": "/arena-ladder/index.html",
+    "main.999e827a.css.map": "/arena-ladder/static/css/main.999e827a.css.map",
+    "main.d0c15d21.js.map": "/arena-ladder/static/js/main.d0c15d21.js.map"
   },
   "entrypoints": [
-    "static/css/main.be5514ce.css",
+    "static/css/main.999e827a.css",
     "static/js/main.d0c15d21.js"
   ]
 }
