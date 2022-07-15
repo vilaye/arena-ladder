@@ -13,7 +13,6 @@ function App() {
         <Route path="/cutoff" element={<CutoffPage />} />
         <Route path="/arena-point-calculator" element={<APCalculatorPage />} />
         <Route path="/ladder/:teamname" element={<TeamPage />} />
-        <Route path="/:teamname" element={<TeamPage />} />
         <Route path="*" element={<LadderPage />} />
       </Routes>
     </Layout>

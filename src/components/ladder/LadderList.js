@@ -26,18 +26,18 @@ const LadderList = ({ data, rowsPerPage }) => {
           </tr>
         </thead>
         <tbody>
-          {slice.map((el, index) => (
+          {slice.map((team) => (
             <LadderEntry
-              key={uuidv4()}
-              id={index}
-              rank={el.rank}
-              teamname={el.team.name}
-              members={slice}
-              rating={el.rating}
-              win={el.season_match_statistics.won}
-              total={el.season_match_statistics.played}
-              server={el.team.realm.slug}
-              faction={el.hasOwnProperty("faction") ? el.faction.type : null}
+              key={team.id}
+              id={team.id}
+              rank={team.rank}
+              teamname={team.teamName}
+              members={team.teamMembers}
+              rating={team.rating}
+              win={team.win}
+              lost={team.lost}
+              server={team.realm}
+              faction={team.hasOwnProperty("faction") ? team.faction : null}
             />
           ))}
         </tbody>

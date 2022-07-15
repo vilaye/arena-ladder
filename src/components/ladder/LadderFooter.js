@@ -71,34 +71,6 @@ const LadderFooter = ({ range, setPage, page, slice }) => {
       </button>
     </div>
   );
-
-  // return (
-  //   <div className={styles.buttons}>
-  //     <button
-  //       key={uuidv4()}
-  //       onClick={() => setPage(1)}
-  //       className={`${page >= 5 ? styles.inactiveButton : styles.normalButton}`}
-  //     >
-  //       1
-  //     </button>
-  //     <button
-  //       key={uuidv4()}
-  //       onClick={() => setPage(1)}
-  //       className={`${page >= 5 ? styles.inactiveButton : styles.normalButton}`}
-  //     >
-  //       {`${page >= 5 ? page : "1"}`}
-  //     </button>
-  //     <button
-  //       key={uuidv4()}
-  //       onClick={() => setPage(6)}
-  //       className={`${
-  //         page >= 10 ? styles.inactiveButton : styles.normalButton
-  //       }`}
-  //     >
-  //       {page}
-  //     </button>
-  //   </div>
-  // );
 };
 
 export default LadderFooter;

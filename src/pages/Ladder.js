@@ -4,6 +4,8 @@ import Token from "../components/tokens/Token";
 import style from "./Ladder.module.css";
 import React from "react";
 
+import Axios from "axios";
+
 function LadderPage() {
   const [isLoading2, setIsLoading2] = useState(true);
   const [loadedLadder2, setLoadedLadder2] = useState([]);
@@ -19,90 +21,24 @@ function LadderPage() {
   const [fivesState, setFives] = useState(false);
 
   useEffect(() => {
-    setIsLoading2(true);
-    fetch(
-      `https://eu.api.blizzard.com/data/wow/pvp-region/0/pvp-season/4/pvp-leaderboard/2v2?namespace=dynamic-classic-eu&locale=en_EU&access_token=${Token()}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const entries = [];
-
-        for (const key in data) {
-          const entry = {
-            id: key,
-            ...data[key],
-          };
-          entries.push(entry);
-        }
-
-        const actualLadder = [];
-        Object.keys(entries[4]).map((keyName, i) =>
-          actualLadder.push(entries[4][keyName])
-        );
-
-        setIsLoading2(false);
-        setLoadedLadder2(actualLadder);
-      });
+    Axios.get("http://localhost:3001/getTwos").then((response) => {
+      setLoadedLadder2(response.data);
+      setIsLoading2(false);
+    });
   }, []);
 
   useEffect(() => {
-    setIsLoading3(true);
-    fetch(
-      `https://eu.api.blizzard.com/data/wow/pvp-region/0/pvp-season/4/pvp-leaderboard/3v3?namespace=dynamic-classic-eu&locale=en_EU&access_token=${Token()}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const entries = [];
-
-        for (const key in data) {
-          const entry = {
-            id: key,
-            ...data[key],
-          };
-          entries.push(entry);
-        }
-
-        const actualLadder = [];
-        Object.keys(entries[4]).map((keyName, i) =>
-          actualLadder.push(entries[4][keyName])
-        );
-
-        setIsLoading3(false);
-        setLoadedLadder3(actualLadder);
-      });
+    Axios.get("http://localhost:3001/getThrees").then((response) => {
+      setLoadedLadder3(response.data);
+      setIsLoading3(false);
+    });
   }, []);
 
   useEffect(() => {
-    setIsLoading5(true);
-    fetch(
-      `https://eu.api.blizzard.com/data/wow/pvp-region/0/pvp-season/4/pvp-leaderboard/5v5?namespace=dynamic-classic-eu&locale=en_EU&access_token=${Token()}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const entries = [];
-
-        for (const key in data) {
-          const entry = {
-            id: key,
-            ...data[key],
-          };
-          entries.push(entry);
-        }
-
-        const actualLadder = [];
-        Object.keys(entries[4]).map((keyName, i) =>
-          actualLadder.push(entries[4][keyName])
-        );
-
-        setIsLoading5(false);
-        setLoadedLadder5(actualLadder);
-      });
+    Axios.get("http://localhost:3001/getFives").then((response) => {
+      setLoadedLadder5(response.data);
+      setIsLoading5(false);
+    });
   }, []);
 
   function allStatesFalse() {
@@ -151,10 +87,6 @@ function LadderPage() {
     );
   }
 
-  const twos = loadedLadder2.slice(0, 5000);
-  const threes = loadedLadder3.slice(0, 5000);
-  const fives = loadedLadder5.slice(0, 5000);
-
   if (isLoading3) {
     return (
       <div>
@@ -167,7 +99,7 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={twos} rowsPerPage={50} />
+        <LadderList data={loadedLadder2} rowsPerPage={50} />
       </section>
     );
   }
@@ -176,7 +108,7 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={threes} rowsPerPage={50} />
+        <LadderList data={loadedLadder3} rowsPerPage={50} />
       </section>
     );
   }
@@ -185,7 +117,7 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={fives} rowsPerPage={50} />
+        <LadderList data={loadedLadder5} rowsPerPage={50} />
       </section>
     );
   }

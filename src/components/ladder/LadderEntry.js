@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import style from "./LadderEntry.module.css";
 
 function LadderEntry(props) {
-
   // function classIcon() {
   //   const icons = [];
   //   if (props.members[props.id].team.members !== undefined) {
@@ -30,37 +29,28 @@ function LadderEntry(props) {
 
   function members() {
     const members = [];
-    if (props.members[props.id].team.members !== undefined) {
-      for (let i = 0; i < props.members[props.id].team.members.length; i++) {
-        members.push(
-          <span
-            key={uuidv4()}
-            className={`_${
-              props.members[props.id].team.members[i].character.playable_class
-                .id
-            }`}
-          >
-            {props.members[props.id].team.members[i].character.name}
-          </span>,
-          " "
-        );
-      }
-      return members;
-    }
 
+    props.members.forEach((member) => {
+      members.push(
+        <span key={uuidv4()} className={`_${member.class}`}>
+          {member.name}
+        </span>,
+        " "
+      );
+    });
     return members;
   }
 
-  const percent = Math.round((props.win / props.total) * 100);
-  const loss = props.total - props.win;
+  const total = props.win + props.lost;
+  const percent = Math.round((props.win / total) * 100);
 
   return (
     <tr key={uuidv4()} className={style.ladderentry}>
       <td>{props.rank}</td>
       <td className={style.team}>
         <Link
-          to={props.teamname}
-          state={{ team: props}}
+          to={props.id}
+          state={{ team: props }}
           className={`${props.faction === "HORDE" ? style.red : style.blue}`}
         >
           {props.teamname}
@@ -69,7 +59,7 @@ function LadderEntry(props) {
       <td className={style.members}>{members()}</td>
       <td>{props.rating}</td>
       <td>
-        {props.win}-{loss}
+        {props.win}-{props.lost}
       </td>
       <td>{percent}%</td>
       <td style={{ textTransform: "capitalize" }}>{props.server}</td>
