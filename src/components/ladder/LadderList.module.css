@@ -9,7 +9,7 @@
 }
 
 .laddertable thead tr {
-    background-color: hsla(100, 14%, 4%, 0.781);
+    background-color: hsla(116, 20%, 20%, 0.5);
     color: white;
     font-weight: bold;
 }
@@ -24,7 +24,7 @@
 }
 
 .laddertable tbody tr:nth-of-type(even) {
-    background-color: hsla(100, 14%, 4%, 0.781);
+    background-color: hsla(116, 20%, 20%, 0.5);
 }
 
 .laddertable tbody tr:last-of-type {
