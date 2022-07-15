@@ -1,5 +1,5 @@
 function Token() {
-    return "USAFvOJtj6KtuQH7fuMADntksdg87kiO54";
+    return "US8z4dz4mFMDWHQWYVQC8BnhOwo8tcrzX3";
 }
 export default Token;
 
