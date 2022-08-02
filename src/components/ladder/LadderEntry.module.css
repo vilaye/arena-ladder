@@ -18,11 +18,16 @@ img {
     padding: 0 5px 0 0;
 }
 
-.members {
+.teamMembers {
     max-width: 500px;
     text-align: left;
+    text-decoration: none;
 }
 
 .team {
     text-align: left;
+}
+
+.class {
+    text-decoration: none;
 }

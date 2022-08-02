@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import LadderList from "../components/ladder/LadderList";
-import Token from "../components/tokens/Token";
 import style from "./Ladder.module.css";
 import React from "react";
 
@@ -19,6 +18,14 @@ function LadderPage() {
   const [twosState, setTwos] = useState(false);
   const [threesState, setThrees] = useState(true);
   const [fivesState, setFives] = useState(false);
+
+  const [loadedCutoffs, setLoadedCutoffs] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getCutoff").then((response) => {
+      setLoadedCutoffs(response.data[0]);
+    });
+  }, []);
 
   useEffect(() => {
     Axios.get("http://localhost:3001/getTwos").then((response) => {
@@ -59,7 +66,10 @@ function LadderPage() {
     allStatesFalse();
     setFives(true);
   }
-  
+
+  var twosSlice = loadedLadder2.slice(0, 5000);
+  var threesSlice = loadedLadder3.slice(0, 5000);
+  var fivesSlice = loadedLadder5.slice(0, 5000);
 
   function LadderButtons() {
     return (
@@ -68,19 +78,19 @@ function LadderPage() {
           className={`${twosState === true ? style.active : ""}`}
           onClick={twosList}
         >
-          2s
+          2v2
         </button>
         <button
           className={`${threesState === true ? style.active : ""}`}
           onClick={threesList}
         >
-          3s
+          3v3
         </button>
         <button
           className={`${fivesState === true ? style.active : ""}`}
           onClick={fivesList}
         >
-          5s
+          5v5
         </button>
         <br></br>
       </div>
@@ -99,7 +109,7 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={loadedLadder2} rowsPerPage={50} />
+        <LadderList data={twosSlice} cutoff={loadedCutoffs} rowsPerPage={50} />
       </section>
     );
   }
@@ -108,7 +118,11 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={loadedLadder3} rowsPerPage={50} />
+        <LadderList
+          data={threesSlice}
+          cutoff={loadedCutoffs}
+          rowsPerPage={50}
+        />
       </section>
     );
   }
@@ -117,7 +131,7 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={loadedLadder5} rowsPerPage={50} />
+        <LadderList data={fivesSlice} cutoff={loadedCutoffs} rowsPerPage={50} />
       </section>
     );
   }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import style from "./APCalculator.module.css";
 
 function APCalculatorPage () {
 
@@ -27,7 +28,7 @@ function APCalculatorPage () {
     return (
         <div>
             <h1>Arena Points Calculator</h1>
-            <table>
+            <table className={style.apcalctable}>
                 <thead>
                     <tr>
                         <th>Bracket</th>

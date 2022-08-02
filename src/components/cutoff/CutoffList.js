@@ -1,26 +1,48 @@
+import style from "./CutoffList.module.css";
 
-function CutoffList({cutoffs, bracket}) {
+function CutoffList({ cutoffs, bracket }) {
+  console.log(cutoffs);
 
-    const titles = ['Merciless Gladiator', 'Gladiator', 'Duelist', 'Rival', 'Challenger']
-    return (
-        <section>
-            <h2>{bracket}</h2>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>Title</th>
-                        <th>Rating</th>
-                    </tr>
-                        {cutoffs.map((cutoff, index) => (
-                            <tr key={index}>
-                                <td>{titles[index]}</td>
-                                <td>{cutoff.rating_cutoff}</td>
-                            </tr>
-                        ))}
-                </tbody>
-            </table>
-        </section>
-    );
+  const titles = [
+    "Brutal Gladiator",
+    "Gladiator",
+    "Duelist",
+    "Rival",
+    "Challenger",
+  ];
+  return (
+    <section>
+      <h2>{bracket}</h2>
+      <table className={style.cutofftable}>
+        <tbody>
+          <tr>
+            <th>Title</th>
+            <th>Rating</th>
+          </tr>
+          <tr>
+            <td>{titles[0]}</td>
+            <td>{cutoffs.r1}</td>
+          </tr>
+          <tr>
+            <td>{titles[1]}</td>
+            <td>{cutoffs.glad}</td>
+          </tr>
+          <tr>
+            <td>{titles[2]}</td>
+            <td>{cutoffs.duelist}</td>
+          </tr>
+          <tr>
+            <td>{titles[3]}</td>
+            <td>{cutoffs.rival}</td>
+          </tr>
+          <tr>
+            <td>{titles[4]}</td>
+            <td>{cutoffs.challenger}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  );
 }
 
 export default CutoffList;

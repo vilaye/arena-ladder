@@ -1,4 +1,4 @@
-ul {
+.navlist {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -9,11 +9,11 @@ ul {
   background-color: hsla(113, 20%, 9%, 0.75);
 }
 
-li {
+.navlist li {
   float: left;
 }
 
-li a {
+.navlist li a {
   display: flex;
   color: white;
   text-align: center;
@@ -21,7 +21,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+.navlist li a:hover {
   background-color: hsla(101, 20%, 19%, 0.781);
 }
 

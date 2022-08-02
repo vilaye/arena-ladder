@@ -17,8 +17,8 @@ const LadderList = ({ data, rowsPerPage }) => {
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Team Name</th>
-            <th>Members</th>
+            <th className={style.nameAndMembers}>Team Name</th>
+            <th className={style.nameAndMembers}>Members</th>
             <th>Rating</th>
             <th>Stats</th>
             <th>Ratio</th>
@@ -31,8 +31,8 @@ const LadderList = ({ data, rowsPerPage }) => {
               key={team.id}
               id={team.id}
               rank={team.rank}
-              teamname={team.teamName}
-              members={team.teamMembers}
+              teamName={team.teamName}
+              teamMembers={team.teamMembers}
               rating={team.rating}
               win={team.win}
               lost={team.lost}

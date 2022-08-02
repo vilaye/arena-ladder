@@ -4,6 +4,8 @@ import APCalculatorPage from "./pages/APCalculator";
 import CutoffPage from "./pages/Cutoff";
 import LadderPage from "./pages/Ladder";
 import TeamPage from "./pages/Team";
+import PlayerPage from "./pages/Player";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   return (
@@ -12,7 +14,12 @@ function App() {
         <Route path="/ladder" element={<LadderPage />} />
         <Route path="/cutoff" element={<CutoffPage />} />
         <Route path="/arena-point-calculator" element={<APCalculatorPage />} />
-        <Route path="/ladder/:teamname" element={<TeamPage />} />
+        <Route path="/team/:id" element={<TeamPage />} />
+        {/* <Route path="/player/:name" element={<PlayerPage />} /> */}
+        <Route
+          path="/player/:name"
+          element={<PlayerPage key={uuidv4()} />}
+        />
         <Route path="*" element={<LadderPage />} />
       </Routes>
     </Layout>
