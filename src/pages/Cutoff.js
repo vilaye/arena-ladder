@@ -2,17 +2,39 @@ import { useState, useEffect } from "react";
 import CutoffList from "../components/cutoff/CutoffList";
 import style from "./Cutoff.module.css";
 import Axios from "axios";
+import rankone from "../components/images/rankone.png";
+import gladiator from "../components/images/gladiator.png";
+import duelist from "../components/images/duelist.png";
+import rival from "../components/images/rival.png";
+import challenger from "../components/images/challenger.png";
 
+  
 function CutoffPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedCutoffs, setLoadedCutoffs] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getCutoff").then((response) => {
+    Axios.get(
+      "https://wgbgwilw20.execute-api.eu-central-1.amazonaws.com/wow-arena/cutoffs"
+    ).then((response) => {
       setIsLoading(false);
       setLoadedCutoffs(response.data[0]);
     });
   }, []);
+
+  const rankoneImg = (
+    <img className={style.title} src={`${rankone}`} alt="test" />
+  );
+  const gladiatorImg = (
+    <img className={style.title} src={`${gladiator}`} alt="test" />
+  );
+  const duelistImg = (
+    <img className={style.title} src={`${duelist}`} alt="test" />
+  );
+  const rivalImg = <img className={style.title} src={`${rival}`} alt="test" />;
+  const challengerImg = (
+    <img className={style.title} src={`${challenger}`} alt="test" />
+  );
 
   const twos = {
     r1: loadedCutoffs.twosR1,
@@ -68,30 +90,36 @@ function CutoffPage() {
           </p>
         </div>
         <div>
-          <p className={style.title}>Seasonal Rewards</p>
+          <p className={style.seasonalRewards}>Seasonal Rewards</p>
           <table className={style.seasonaltable}>
             <tbody>
               <tr>
+                <th></th>
                 <th>Title</th>
                 <th>Cutoff</th>
               </tr>
               <tr>
+                <td>{rankoneImg}</td>
                 <td>Brutal Gladiator</td>
                 <td>(Top 0.1%)</td>
               </tr>
               <tr>
+                <td>{gladiatorImg}</td>
                 <td>Gladiator</td>
                 <td>(Top 0.5%)</td>
               </tr>
               <tr>
+                <td>{duelistImg}</td>
                 <td>Duelist</td>
                 <td>(Top 0.5% – 3%)</td>
               </tr>
               <tr>
+                <td>{rivalImg}</td>
                 <td>Rival</td>
                 <td>(Top 3% – 10%)</td>
               </tr>
               <tr>
+                <td>{challengerImg}</td>
                 <td>Challenger</td>
                 <td>(Top 10% – 35%)</td>
               </tr>

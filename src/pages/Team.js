@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import TeamCard from '../components/team/TeamCard';
+import SingleTeamCard from "../components/team/SingleTeamCard";
 
 
 function TeamPage() {
@@ -8,7 +8,7 @@ function TeamPage() {
     const { team } = location.state;
 
     return (
-        <TeamCard team={team}></TeamCard>
+        <SingleTeamCard team={team}></SingleTeamCard>
     );
 
 }

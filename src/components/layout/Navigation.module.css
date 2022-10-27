@@ -22,7 +22,7 @@
 }
 
 .navlist li a:hover {
-  background-color: hsla(101, 20%, 19%, 0.781);
+  color: green;
 }
 
 .highlight {

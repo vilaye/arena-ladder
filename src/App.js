@@ -15,7 +15,6 @@ function App() {
         <Route path="/cutoff" element={<CutoffPage />} />
         <Route path="/arena-point-calculator" element={<APCalculatorPage />} />
         <Route path="/team/:id" element={<TeamPage />} />
-        {/* <Route path="/player/:name" element={<PlayerPage />} /> */}
         <Route
           path="/player/:name"
           element={<PlayerPage key={uuidv4()} />}

@@ -6,7 +6,7 @@ import style from "./LadderList.module.css";
 import useTable from "../hooks/TableLogic";
 import LadderFooter from "./LadderFooter";
 
-const LadderList = ({ data, rowsPerPage }) => {
+const LadderList = ({ data, rowsPerPage, cutoff }) => {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
 
@@ -16,6 +16,7 @@ const LadderList = ({ data, rowsPerPage }) => {
       <table className={style.laddertable}>
         <thead>
           <tr>
+            <th>Title</th>
             <th>Rank</th>
             <th className={style.nameAndMembers}>Team Name</th>
             <th className={style.nameAndMembers}>Members</th>
@@ -29,6 +30,7 @@ const LadderList = ({ data, rowsPerPage }) => {
           {slice.map((team) => (
             <LadderEntry
               key={team.id}
+              cutoff={cutoff}
               id={team.id}
               rank={team.rank}
               teamName={team.teamName}

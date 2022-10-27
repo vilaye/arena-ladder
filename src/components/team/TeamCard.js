@@ -3,9 +3,26 @@ import { Link } from "react-router-dom";
 import style from "./TeamCard.module.css";
 
 function TeamCard(props) {
-
+  if (props.team._id === "0") {
+    return (
+      <div>test</div>
+    )
+  } else {
     return (
       <>
+        <table className={style.teamtable}>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Rank</th>
+              <th>Win</th>
+              <th>Loss</th>
+              <th>Ratio</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
         <table className={style.teamtable}>
           <caption>
             <Link to={`/team/${props.team.id}`} state={{ team: props.team }}>
@@ -15,13 +32,10 @@ function TeamCard(props) {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Class</th>
-              <th>Race</th>
               <th>Win</th>
               <th>Loss</th>
               <th>Ratio</th>
               <th>Rating</th>
-              <th>Server</th>
             </tr>
           </thead>
           <tbody>
@@ -43,6 +57,6 @@ function TeamCard(props) {
       </>
     );
   }
-
+}
 
 export default TeamCard;

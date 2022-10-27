@@ -47,7 +47,7 @@
     padding-right: 30px;
 }
 
-.title {
+.seasonalRewards {
     font-size: 25px;
 }
 
@@ -86,4 +86,9 @@
 
 .seasonaltable tbody tr:last-of-type {
     border-bottom: 1px solid black;
+}
+
+.title {
+    width: 1.7rem;
+    padding: 0px
 }

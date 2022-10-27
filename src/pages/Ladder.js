@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import LadderList from "../components/ladder/LadderList";
 import style from "./Ladder.module.css";
 import React from "react";
+import Loading from "../components/layout/Loading";
 
 import Axios from "axios";
 
@@ -22,31 +23,63 @@ function LadderPage() {
   const [loadedCutoffs, setLoadedCutoffs] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getCutoff").then((response) => {
-      setLoadedCutoffs(response.data[0]);
-    });
-  }, []);
-
-  useEffect(() => {
-    Axios.get("http://localhost:3001/getTwos").then((response) => {
-      setLoadedLadder2(response.data);
-      setIsLoading2(false);
-    });
-  }, []);
-
-  useEffect(() => {
-    Axios.get("http://localhost:3001/getThrees").then((response) => {
+    Axios.get(
+      "https://wgbgwilw20.execute-api.eu-central-1.amazonaws.com/wow-arena/threes"
+    ).then((response) => {
       setLoadedLadder3(response.data);
       setIsLoading3(false);
     });
   }, []);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getFives").then((response) => {
+    Axios.get(
+      "https://wgbgwilw20.execute-api.eu-central-1.amazonaws.com/wow-arena/cutoffs"
+    ).then((response) => {
+      setLoadedCutoffs(response.data[0]);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.get(
+      "https://wgbgwilw20.execute-api.eu-central-1.amazonaws.com/wow-arena/twos"
+    ).then((response) => {
+      setLoadedLadder2(response.data);
+      setIsLoading2(false);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.get(
+      "https://wgbgwilw20.execute-api.eu-central-1.amazonaws.com/wow-arena/fives"
+    ).then((response) => {
       setLoadedLadder5(response.data);
       setIsLoading5(false);
     });
   }, []);
+
+  const twos = {
+    r1: loadedCutoffs.twosR1,
+    glad: loadedCutoffs.twosGlad,
+    duelist: loadedCutoffs.twosDuelist,
+    rival: loadedCutoffs.twosRival,
+    challenger: loadedCutoffs.twosChallenger,
+  };
+
+  const threes = {
+    r1: loadedCutoffs.threesR1,
+    glad: loadedCutoffs.threesGlad,
+    duelist: loadedCutoffs.threesDuelist,
+    rival: loadedCutoffs.threesRival,
+    challenger: loadedCutoffs.threesChallenger,
+  };
+
+  const fives = {
+    r1: loadedCutoffs.fivesR1,
+    glad: loadedCutoffs.fivesGlad,
+    duelist: loadedCutoffs.fivesDuelist,
+    rival: loadedCutoffs.fivesRival,
+    challenger: loadedCutoffs.fivesChallenger,
+  };
 
   function allStatesFalse() {
     setTwos(false);
@@ -99,9 +132,7 @@ function LadderPage() {
 
   if (isLoading3) {
     return (
-      <div>
-        <p>Loading ...</p>
-      </div>
+      <Loading loading={isLoading3}/>
     );
   }
 
@@ -109,7 +140,7 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={twosSlice} cutoff={loadedCutoffs} rowsPerPage={50} />
+        <LadderList data={twosSlice} cutoff={twos} rowsPerPage={50} />
       </section>
     );
   }
@@ -120,7 +151,7 @@ function LadderPage() {
         <LadderButtons />
         <LadderList
           data={threesSlice}
-          cutoff={loadedCutoffs}
+          cutoff={threes}
           rowsPerPage={50}
         />
       </section>
@@ -131,7 +162,7 @@ function LadderPage() {
     return (
       <section>
         <LadderButtons />
-        <LadderList data={fivesSlice} cutoff={loadedCutoffs} rowsPerPage={50} />
+        <LadderList data={fivesSlice} cutoff={fives} rowsPerPage={50} />
       </section>
     );
   }

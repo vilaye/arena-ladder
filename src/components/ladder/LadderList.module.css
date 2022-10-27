@@ -1,8 +1,8 @@
 .laddertable {
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.95em;
-    min-width: 1750px;
+    font-size: 0.85em;
+    min-width: 1500px;
     border-radius: 5px 5px 5px 5px;
     overflow: hidden;
     color: white;
@@ -16,7 +16,7 @@
 
 .laddertable th,
 .laddertable td {
-    padding: 12px 15px;
+    padding: 7px 15px;
 }
 
 .laddertable tbody tr {
