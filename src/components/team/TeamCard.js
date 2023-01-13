@@ -33,8 +33,8 @@ function TeamCard(props) {
             <tr>
               <th>Name</th>
               <th>Win</th>
-              <th>Loss</th>
-              <th>Ratio</th>
+                <th>Loss</th>
+                <th>Ratio</th>
               <th>Rating</th>
             </tr>
           </thead>
