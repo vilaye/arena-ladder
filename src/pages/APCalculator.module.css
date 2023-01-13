@@ -1,0 +1,33 @@
+.apcalctable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+.apcalctable thead tr {
+    background-color: hsla(103, 84%, 58%, 0.1);
+    color: white;
+    font-weight: bold;
+}
+
+.apcalctable th,
+.apcalctable td {
+    padding: 12px 15px;
+}
+
+.apcalctable tbody tr {
+    border-bottom: 1px solid black;
+}
+
+.apcalctable tbody tr:nth-of-type(even) {
+    background-color: hsla(103, 84%, 58%, 0.1);
+}
+
+.apcalctable tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}

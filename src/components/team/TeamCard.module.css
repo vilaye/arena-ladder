@@ -1,0 +1,35 @@
+.teamtable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: white;
+}
+
+.teamtable thead tr {
+    background-color: hsla(103, 84%, 58%, 0.1);
+    color: white;
+    font-weight: bold;
+}
+
+.teamtable th,
+.teamtable td {
+    padding: 12px 15px;
+}
+
+.teamtable tbody tr {
+    border-bottom: 1px solid black;
+}
+
+.teamtable tbody tr:nth-of-type(even) {
+    background-color: hsla(103, 84%, 58%, 0.1);
+}
+
+.teamtable tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+caption {
+    color: black;
+}

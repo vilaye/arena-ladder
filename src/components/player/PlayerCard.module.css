@@ -1,0 +1,20 @@
+.teams {
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+
+}
+
+@media (min-width: 1700px) {
+    .teams {
+        flex-direction: row;
+    }
+}
+
+.teams>* {
+    flex-basis: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

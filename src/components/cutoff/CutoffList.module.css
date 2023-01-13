@@ -1,0 +1,45 @@
+.cutofftable {
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.95em;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    color: white;
+}
+
+.cutofftable thead tr {
+    background-color: hsla(103, 84%, 58%, 0.1);
+    color: white;
+    font-weight: bold;
+}
+
+.cutofftable th,
+.cutofftable td {
+    padding: 12px 15px;
+}
+
+.cutofftable tbody tr {
+    border-bottom: 1px solid black;
+}
+
+.cutofftable tbody tr:nth-of-type(even) {
+    background-color: hsla(103, 84%, 58%, 0.1);
+}
+
+.cutofftable tbody tr:last-of-type {
+    border-bottom: 1px solid black;
+}
+
+caption {
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    margin: 0px
+}
+
+.title {
+    width: 1.7rem;
+    padding: 0px
+}
